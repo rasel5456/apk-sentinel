@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>APK Sentinel</title><link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="APK Sentinel performs safe, explainable static APK triage for authorized security labs.">
+  <title>APK Sentinel — Static APK Security Triage</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <main class="shell">
-    <header><div class="eyebrow">DEFENSIVE MOBILE SECURITY</div><h1>APK Sentinel</h1><p>Static APK triage for samples you own or are authorized to inspect.</p></header>
-    <section class="notice"><strong>Safety boundary:</strong> This tool never installs or executes an APK. Use only in an isolated, authorized lab.</section>
-    <form id="uploadForm" class="card"><label for="apk">Choose an APK</label><input id="apk" name="apk" type="file" accept=".apk" required><button type="submit">Analyze safely</button><p id="status" class="muted"></p></form>
-    <section id="report" class="hidden"></section>
+    <nav class="nav"><div class="brand"><span class="brand-mark">⌁</span> APK Sentinel</div><a href="https://github.com/rasel5456/apk-sentinel" target="_blank" rel="noreferrer">Open source ↗</a></nav>
+    <header class="hero"><div class="eyebrow">DEFENSIVE MOBILE SECURITY</div><h1>Understand an APK<br><em>before it runs.</em></h1><p>Fast, explainable static triage for Android packages you own or are authorized to inspect.</p><div class="chips"><span>SHA-256 hashing</span><span>Permission review</span><span>Risk scoring</span></div></header>
+    <section class="notice"><strong>Built for safe analysis.</strong> APK Sentinel reads the package archive only. It never installs, executes, or controls a device. Use samples from an authorized, isolated lab.</section>
+    <form id="uploadForm" class="upload-card">
+      <div class="drop-zone" id="dropZone"><div class="upload-icon">↑</div><label for="apk">Drop an APK here or <span>browse files</span></label><input id="apk" name="apk" type="file" accept=".apk" required><p id="fileName" class="muted">Maximum file size: 25 MB</p></div>
+      <button type="submit" id="analyzeButton">Analyze safely <span>→</span></button><p id="status" class="status" role="status"></p>
+    </form>
+    <section id="report" class="hidden" aria-live="polite"></section>
+    <footer><span>APK Sentinel · Static analysis MVP</span><span>Authorized use only</span></footer>
   </main>
   <script src="/app.js"></script>
 </body>
