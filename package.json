@@ -1,0 +1,17 @@
+{
+  "name": "apk-sentinel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Safe, static APK risk analyzer MVP for authorized samples.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "lint": "node --check src/analyzer.js && node --check src/server.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "express": "^4.21.2",
+    "multer": "^2.0.2"
+  }
+}
